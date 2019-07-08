@@ -17,7 +17,6 @@ public class ProductController {
     private ProductService productService;
 
 
-    //CORS
     @CrossOrigin("http://localhost:4200")
     @RequestMapping(value = "/api/product/{id}", method = RequestMethod.GET)
     public ResponseEntity<Product> getById(@PathVariable Long id) {
