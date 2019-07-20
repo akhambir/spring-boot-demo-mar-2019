@@ -27,7 +27,7 @@ public class DefaultScheduler {
     // DANGER!!! never do this. Stateful class is not thread safe!!!
     private int counter = 1;
 
-    @Scheduled(initialDelay = 5000, fixedDelay = 7000)  //(cron = "0 0 12 1/1 * ? *")
+    //@Scheduled(initialDelay = 5000, fixedDelay = 7000)  //(cron = "0 0 12 1/1 * ? *")
     public void pollAndPrintAllCategories() {
         System.out.println("#####################");
         categoryRepository.findAll().stream()
@@ -39,7 +39,7 @@ public class DefaultScheduler {
                 .collect(Collectors.toSet());*/
     }
 
-    @Scheduled(initialDelay = 7000, fixedDelay = 7000)
+    //@Scheduled(initialDelay = 7000, fixedDelay = 7000)
     public void addNewCategory() {
         categoryRepository.save(new Category(null, "test_" + counter, "test_" + counter));
     }
